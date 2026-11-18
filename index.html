@@ -2,28 +2,62 @@
     <head>
         <title>HOME</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Pola background terbagi dua (Pink & Kuning Pastel) dengan motif bintang selang-seling */
+            .star-split-bg {
+                background-image: 
+                    /* Bintang kuning pastel untuk bagian atas */
+                    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='15,4 18,11 25,11 19,16 21,23 15,18 9,23 11,16 5,11 12,11' fill='%23f3eeb7'/%3E%3Cpolygon points='45,34 48,41 55,41 49,46 51,53 45,48 39,53 41,46 35,41 42,41' fill='%23f3eeb7'/%3E%3C/svg%3E"),
+                    /* Bintang pink untuk bagian bawah */
+                    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='15,4 18,11 25,11 19,16 21,23 15,18 9,23 11,16 5,11 12,11' fill='%23de7b98'/%3E%3Cpolygon points='45,34 48,41 55,41 49,46 51,53 45,48 39,53 41,46 35,41 42,41' fill='%23de7b98'/%3E%3C/svg%3E"),
+                    /* Warna dasar terbagi 50% atas Pink, 50% bawah Kuning Pastel */
+                    linear-gradient(to bottom, #de7b98 0%, #de7b98 50%, #f3eeb7 50%, #f3eeb7 100%);
+                background-size: 60px 60px, 60px 60px, 100% 100%;
+                background-repeat: repeat, repeat, no-repeat;
+                /* Membatasi area bintang atas hanya di 50% atas, dan bintang bawah di 50% bawah */
+                -webkit-mask-image: linear-gradient(black, black);
+            }
+
+            /* Memisahkan layer bintang atas dan bawah secara presisi */
+            .bg-top-stars {
+                background-color: #de7b98;
+                background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='16,6 19,13 26,13 20,18 22,25 16,20 10,25 12,18 6,13 13,13' fill='%23f3eeb7'/%3E%3Cpolygon points='48,38 51,45 58,45 52,50 54,57 48,52 42,57 44,50 38,45 45,45' fill='%23f3eeb7'/%3E%3C/svg%3E");
+                background-size: 64px 64px;
+            }
+
+            .bg-bottom-stars {
+                background-color: #f3eeb7;
+                background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='16,6 19,13 26,13 20,18 22,25 16,20 10,25 12,18 6,13 13,13' fill='%23de7b98'/%3E%3Cpolygon points='48,38 51,45 58,45 52,50 54,57 48,52 42,57 44,50 38,45 45,45' fill='%23de7b98'/%3E%3C/svg%3E");
+                background-size: 64px 64px;
+            }
+        </style>
     </head>
     <body>
-        <!-- Bagian background diubah menjadi gradasi Pink (#f472b6) ke Burgundy (#5e0b2b) -->
-        <div class="relative min-h-screen w-full bg-[#5e0b2b] overflow-hidden flex items-center justify-center p-4" 
-             style="background-image: radial-gradient(circle, #f472b6 15%, #9d174d 55%, #5e0b2b 95%);">
+        <div class="relative min-h-screen w-full overflow-hidden flex items-center justify-center p-4">
   
-          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#fff 2px, transparent 2px); background-size: 30px 30px;"></div>
+          <!-- Layer Background Terbagi Dua Seperti Foto -->
+          <div class="absolute inset-0 flex flex-col z-0">
+              <div class="h-1/2 w-full bg-top-stars"></div>
+              <div class="h-1/2 w-full bg-bottom-stars"></div>
+          </div>
 
-          <div class="absolute top-12 left-20 transform -rotate-12 hover:scale-110 transition duration-300 select-none">
+          <div class="absolute bottom-80 right-80 transform -rotate-12 hover:scale-110 transition duration-300 select-none z-10">
               <img src="Cursor_icon_cute___Watermark_ideas__Pink_wallpaper_hello_kitty__Cute_pixel-removebg-preview.png" alt="" class="w-40">
-
           </div>
 
-          <div class="absolute bottom-1/4 right-10 transform rotate-12 hover:scale-110 transition duration-300">
-            <span class="text-5xl drop-shadow-[4px_4px_0px_rgba(236,72,153,1)]"><img src="" alt=""></span>
+          <div class="absolute bottom-50 right-10 transform rotate-12 hover:scale-110 transition duration-300 z-10 animate-bounce">
+            <span class="text-5xl drop-shadow-[4px_4px_0px_rgba(236,72,153,1)]">
+              <img src="download__18_-removebg-preview.png" alt="" class="w-40">
+            </span>
           </div>
-
-          <div class="absolute top-5 left-5 transform -rotate-45 opacity-80">
-            <span class="text-7xl">📱</span>
+          
+          <div class="absolute top-5 left-5 transform z-10">
+            <span class="text-7xl">
+              <img src="1126181450599451893-removebg-preview.png" alt="" class="w-40">
+            </span>
           </div>
-
-          <div class="absolute bottom-5 right-5 transform -rotate-12">
+          
+          <div class="absolute bottom-5 right-5 transform -rotate-12 z-10">
             <span class="text-8xl drop-shadow-lg"></span>
             <img src="download__16_-removebg-preview.png" alt="" class="w-80">
           </div>
@@ -38,19 +72,19 @@
               <div class="bg-pink-300 text-white font-bold text-5xl md:text-7xl p-3 self-end transform -rotate-12 shadow-md italic">A</div>
             </div>
 
-            <div class="bg-purple-600 px-10 py-2 rounded-full border-4 border-yellow-300 shadow-[8px_8px_0px_rgba(0,0,0,0.2)] transform -rotate-2 transform -rotate-12 hover:scale-110 transition duration-300 select-none">
+            <div class="bg-purple-600 px-10 py-2 rounded-full border-4 border-yellow-300 shadow-[8px_8px_0px_rgba(0,0,0,0.2)] transform hover:scale-110 transition duration-300 select-none">
               <a href="">
-                <h2 class="text-white font-black text-2xl md:text-4xl tracking-widest uppercase ">CLICK</h2>
+                <h2 class="text-white font-black text-2xl md:text-4xl tracking-widest uppercase">CLICK</h2>
               </a>
             </div>
           </div>
 
-          <div class="absolute bottom-20 left-1/3 bg-white text-pink-500 font-bold px-4 py-1 rounded-full border-2 border-pink-500 shadow-sm rotate-12 uppercase tracking-tighter text-xl">
+          <div class="absolute bottom-20 left-1/3 bg-white text-pink-500 font-bold px-4 py-1 rounded-full border-2 border-pink-500 shadow-sm rotate-12 uppercase tracking-tighter text-xl z-10">
             XOXO
           </div>
           
-          <div class="absolute top-1/2 left-10 text-4xl animate-bounce">
-            🦋
+          <div class="absolute top-1/2 left-10 text-4xl animate-bounce z-10">
+            <img src="593982638326744605-removebg-preview.png" alt="" class="w-40">
           </div>
 
         </div>
